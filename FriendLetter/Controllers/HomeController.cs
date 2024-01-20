@@ -8,7 +8,7 @@ namespace FriendLetter.Controllers
     public string Hello() { return "Hello friend!"; } //hello() represents a route. creates special path/pattern in app.
     [Route("/goodbye")]
     public string Goodbye() { return "Goodbye friend."; }
-    [Route("/")]
-    public string Letter() { return "Our virtual postcard will go here soon!";}
+    [Route("/")] //root path. home page.
+    public ActionResult Letter() { return View(); } //Actionresult is built in MVC class that handles rendering views. return type. View() is built in method from .mvc namespace
   }
 }
