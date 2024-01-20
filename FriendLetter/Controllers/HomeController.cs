@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using FriendLetter.Models;
 
 namespace FriendLetter.Controllers
 {
@@ -9,6 +10,12 @@ namespace FriendLetter.Controllers
     [Route("/goodbye")]
     public string Goodbye() { return "Goodbye friend."; }
     [Route("/")] //root path. home page.
-    public ActionResult Letter() { return View(); } //Actionresult is built in MVC class that handles rendering views. return type. View() is built in method from .mvc namespace
+    //Actionresult is built in MVC class that handles rendering views. return type. View() is built in method from .mvc namespace
+    public ActionResult Letter() 
+    {
+      LetterVariable myLetterVariable = new LetterVariable();
+      myLetterVariable.Recipient = "Lina";
+      return View(myLetterVariable);
+    } 
   }
 }
