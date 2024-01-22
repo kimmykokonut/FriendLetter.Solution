@@ -13,6 +13,8 @@ namespace FriendLetter
 
       WebApplication app = builder.Build(); //create actual host
 
+      //app.UseDeveloperExceptionPage(); //Dev. Exception Page
+
       app.UseRouting(); //want host to match website url to routes we create in app
 
       app.MapControllerRoute( //establish convention for routes to follow
